@@ -40,12 +40,6 @@ p {
 	border-top: 3px solid #f2f2f2;
 }
 
-
-/* change color of "Inspiration"*/
-#menu-item-2795 a{
-	color:rgb(158, 14, 14);
-}
-
 // enlarge padding of hero-slider
 @media all and (max-width: 580px){
 	#hero .et_pb_slide{
@@ -55,6 +49,7 @@ p {
 		padding:20px 5px;
 	}
 }
+
 // delete padding of fullwidth title
 @media all and (max-width: 580px){
 	#description .header-content{
@@ -63,8 +58,13 @@ p {
 }
 
 
-/* Leistungen */
-/*categories (e.g "Leistung") with break-elements*/ 
+// ------------------------------------------- //
+// Leistungen
+// ------------------------------------------- //
+
+
+// categories (e.g "Leistung") with break-elements 
+ 
 #category-box > div:first-of-type{
 	display:flex;
 	flex-direction:row;
@@ -107,16 +107,19 @@ p {
 		padding: 16% 5%!important;
 	}
 }
+
 /* buttons */
 #Layer_1{
 	width: 11%;
 	float: right;
 	opacity: 0.6;
 }
+
 /** footer **/
 #footer-widgets .footer-widget li {
 	padding-left: 0px!important;
 }
+
 .footer-widget li:before { 
 	display: none; 
 }

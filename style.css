@@ -1,5 +1,5 @@
 /*
- Theme Name:     Divi-Child
+ Theme Name:     Divi Child
  Theme URI:      https://www.elegantthemes.com/gallery/divi/
  Description:    Divi Child Theme
  Author:         Kilian Schrenk
@@ -33,11 +33,6 @@ p {
   border-top: 3px solid #f2f2f2;
 }
 
-/* change color of "Inspiration"*/
-#menu-item-2795 a {
-  color: #9e0e0e;
-}
-
 @media all and (max-width: 580px) {
   #hero .et_pb_slide {
     padding: 0% !important;
@@ -52,8 +47,6 @@ p {
     padding: 0px !important;
   }
 }
-/* Leistungen */
-/*categories (e.g "Leistung") with break-elements*/
 #category-box > div:first-of-type {
   display: flex;
   flex-direction: row;
