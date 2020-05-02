@@ -13,6 +13,13 @@ function add_theme_scripts() {
         get_stylesheet_directory_uri() . '/css/child-theme.css', 
         array($parent_style),
         filemtime(get_stylesheet_directory() . '/css/child-theme.css') );
+
+    // load child-theme scripts
+    wp_enqueue_script( 'production', 
+        get_stylesheet_directory_uri() . '/js/build/production.min.js', 
+        array(), 
+        filemtime(get_stylesheet_directory() . '/js/build/production.min.js'),
+        true);
 }
 add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
 
