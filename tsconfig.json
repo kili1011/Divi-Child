@@ -1,0 +1,8 @@
+{
+  "files": ["assets/ts/child-theme.ts"],
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "target": "es5",
+    "outFile": "build/child-theme.js"
+  }
+}

@@ -4,21 +4,10 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
-        // Concatenate JS Files
-        concat: {
-            dist: {
-                src: [
-                    'js/global.js'  // This specific file
-                ],
-                dest: 'js/build/production.js',
-            }
-        },
-
-        // Minify JS Files
-        uglify: {
-            build: {
-                src: 'js/build/production.js',
-                dest: 'js/build/production.min.js'
+        // Typescript
+        ts: {
+            default: {
+                tsconfig: 'tsconfig.json',
             }
         },
 
@@ -29,7 +18,7 @@ module.exports = function(grunt) {
                     style: 'compressed'
                 },
                 files: {
-                    'css/child-theme.css': 'sass/child-theme.scss'
+                    'build/child-theme.css': 'assets/scss/child-theme.scss'
                 }
             } 
         },
@@ -37,14 +26,14 @@ module.exports = function(grunt) {
         // Watcher config
         watch: {
             scripts: {
-                files: ['js/*.js'],
-                tasks: ['concat', 'uglify'],
+                files: ['assets/ts/*.ts'],
+                tasks: ['ts'],
                 options: {
                     spawn: false,
                 },
             },
             css: {
-                files: ['sass/child-theme.scss'], 
+                files: ['assets/scss/*.scss'],
                 tasks: ['sass'],
                 options: {
                     spawn: false,
@@ -54,15 +43,13 @@ module.exports = function(grunt) {
     });
 
     // Plug-Ins
-    grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-connect-proxy');
-
+    grunt.loadNpmTasks('grunt-ts');
 
     // Set Watcher to default task
-    grunt.registerTask('default', ['concat', 'uglify', 'sass']);
+    grunt.registerTask('default', ['ts', 'sass']);
 
 };
 
