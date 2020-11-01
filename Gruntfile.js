@@ -26,7 +26,7 @@ module.exports = function(grunt) {
         // Watcher config
         watch: {
             scripts: {
-                files: ['assets/ts/*.ts'],
+                files: ['**/*.ts'],
                 tasks: ['ts'],
                 options: {
                     spawn: false,
